@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   backend:
+    container_name: backend
     build:
       context: ./Backend
       dockerfile: Dockerfile
@@ -19,6 +20,7 @@ services:
     restart: unless-stopped
 
   employee_formfilling:
+    container_name: Employee_Formfilling
     build:
       context: ./Employee_Formfilling
       dockerfile: Dockerfile
@@ -29,6 +31,7 @@ services:
     restart: unless-stopped
 
   hr_formfilling:
+    container_name: HR_FormFilling
     build:
       context: ./HR_FormFilling
       dockerfile: Dockerfile
@@ -38,7 +41,8 @@ services:
       - app-network
     restart: unless-stopped
 
-  welcome-Page:
+  welcome_page:
+    container_name: Welcome_Page
     build:
       context: ./Welcome-Page
       dockerfile: Dockerfile
@@ -49,6 +53,7 @@ services:
     restart: unless-stopped
 
   postgres:
+    container_name: postgres
     image: postgres:14
     ports:
       - "5118:5432"
@@ -69,3 +74,4 @@ volumes:
 networks:
   app-network:
     driver: bridge
+

@@ -1,8 +1,3 @@
--- Create the database
-CREATE DATABASE job_application_db;
-
--- Connect to the database
-\c job_application_db
 
 -- Create the applications table
 CREATE TABLE applications (
